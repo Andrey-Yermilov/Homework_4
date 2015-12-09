@@ -31,7 +31,7 @@ public class TVForm extends BaseForm {
      * @param priceMax maximal price
      * @return this page
      */
-    public TVForm setPriceMax(int priceMax ) {
+    public TVForm setPriceMax(int  priceMax ) {
         txbPriceMax.type(Integer.toString(priceMax));
         return this;
     }
