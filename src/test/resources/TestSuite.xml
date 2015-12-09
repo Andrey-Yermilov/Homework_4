@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Onliner Test Plan" verbose="1">
+	
+	<test name="TVs Search Test" preserve-order="true">
+		<parameter name="manufacturer" value="Samsung" />
+		<parameter name="priceMax" value="10000000" />
+		<parameter name="yearMin" value="2013" />
+		<parameter name="screenSizeMin" value="37" />
+		<parameter name="screenSizeMax" value="42" />
+		<classes>
+ 			<class name="tests.OnlinerSearchTest" />
+        </classes>
+	</test>
+</suite>
