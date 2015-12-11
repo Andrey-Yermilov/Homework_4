@@ -42,8 +42,11 @@ public class TVForm extends BaseForm {
      * @return this page
      */
     public TVForm chooseManufacturer(String manufacturer) {
-        String manufPath = String.format("//li//span[@class='schema-filter__checkbox-text' and contains(text(),\"%s\")]", manufacturer);
-        CheckBox chbManufacturer = new CheckBox(By.xpath(manufPath), String.format("Manufacturer: %s Check-Box", manufacturer));
+        String manufPath = "//span[contains(text(),\"Производитель\")]/../..//div[@class='schema-filter-control schema-filter-control_more']";
+        String currentManufPath = String.format("//span[@class='schema-filter__checkbox-text' and contains(text(),\"%s\")]", manufacturer);
+        Label lblManufacturer = new Label(By.xpath(manufPath),"Manufacturer");
+        lblManufacturer.click();
+        CheckBox chbManufacturer = new CheckBox(By.xpath(currentManufPath), String.format("Manufacturer: %s Check-Box", manufacturer));
         chbManufacturer.click();
         return this;
     }
