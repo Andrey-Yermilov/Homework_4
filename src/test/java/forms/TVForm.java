@@ -177,11 +177,7 @@ public class TVForm extends BaseForm {
             driver.switchTo().window(itemWinHandle);
         }
         browser.waitForPageToLoad();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         return new ItemForm(fullProductName);
     }
 }
