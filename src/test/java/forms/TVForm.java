@@ -118,9 +118,9 @@ public class TVForm extends BaseForm {
     public void assertSizeIsCorrect (int i, int expectedScreenSizeMin, int expectedscreenSizeMax) {
         Label itemSize = new Label(By.xpath(String.format("(//div[@class='schema-product__group']//div[@class='schema-product__description']/span)[%d]", i)));
         String productDescription = itemSize.getText();
-        int actualSizeInt = Integer.parseInt(productDescription.substring(0, productDescription.indexOf("\"")));
-        info(String.format("Screen size: Expected between '%d' and '%d', found '%d'", expectedScreenSizeMin,expectedscreenSizeMax, actualSizeInt));
-        Assert.assertTrue(actualSizeInt <= expectedscreenSizeMax && actualSizeInt>=expectedScreenSizeMin);
+        int realSizeInt = Integer.parseInt(productDescription.substring(0, productDescription.indexOf("\"")));
+        info(String.format("Screen size: Expected between '%d' and '%d', found '%d'", expectedScreenSizeMin,expectedscreenSizeMax, realSizeInt));
+        Assert.assertTrue(realSizeInt <= expectedscreenSizeMax && realSizeInt>=expectedScreenSizeMin);
     }
 
     /**
