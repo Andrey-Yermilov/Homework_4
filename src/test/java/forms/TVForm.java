@@ -132,6 +132,11 @@ public class TVForm extends BaseForm {
      */
     public void assertItemInfo(String expectedManufacturer, int expectedPriceMax, int expectedScreenSizeMin, int expectedScreenSizeMax){
         int i = 1;
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         browser.waitForPageToLoad();
         while (new Label(By.xpath(String.format("(//div[@class='schema-product__group'])[%d]", i)), String.format("Item%d",i)).isPresent()) {
             assertManufacturerIsCorrect(i, expectedManufacturer);
