@@ -17,7 +17,7 @@ import webdriver.elements.TextBox;
 public class TVForm extends BaseForm {
     private static final String formLocator = "//h1[contains(text(), \"Телевизоры\")]";
     private TextBox txbPriceMax = new TextBox(By.xpath("//span[contains(text(), \"Цена\")]/../parent::div//input[contains(@data-bind, \"до\")]"), "Maximal price");
-    private TextBox txbYearMin = new TextBox(By.xpath("//span[contains(text(), \"Дата выхода на рынок\")]/../parent::div//input[contains(@data-bind, \"от\")]"), "From year");
+    private TextBox txbYearMinimal = new TextBox(By.xpath("//span[contains(text(), \"Дата выхода на рынок\")]/../parent::div//input[contains(@data-bind, \"от\")]"), "From year");
     private ComboBox cbxScreenSizeMin = new ComboBox(By.xpath("//span[contains(text(), \"Диагональ\")]/../parent::div//select[contains(@data-bind, \"from\")]"), "Min diagonal");
     private ComboBox cbxScreenSizeMax = new ComboBox(By.xpath("//span[contains(text(), \"Диагональ\")]/../parent::div//select[contains(@data-bind, \"to\")]"), "Max diagonal");
     private String tvWinHandle;
@@ -57,7 +57,7 @@ public class TVForm extends BaseForm {
      * @return this page
      */
     public TVForm setYearMin(int yearMin) {
-        txbYearMin.type(Integer.toString(yearMin));
+        txbYearMinimal.type(Integer.toString(yearMin));
         return this;
     }
 
